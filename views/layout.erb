@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iZone Schools</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <script src="/javascripts/scripts.js"></script>
+  <script src="/javascripts/jquery.js"></script>
+</head>
+
+<body>
+  <% if session[:current_user] %>
+    <form action="/sessions" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Log-Out">
+    </form>
+
+    <form action="/profiles">
+      <input type="submit" value="Profile">
+    </form>
+  <% else %>
+    <a href="/users/new">Join Us</a>
+    <a href="/sessions/new">Log-In</a>
+  <% end %>
+
+  <%= yield %>
+</body>
+</html>

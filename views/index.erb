@@ -1,0 +1,15 @@
+
+<h2>iZone Schools</h2>
+
+  <% @schools.each do |school|%>
+    <ul>
+      <h2 class="school">School: <%= school.school %></h2>
+      <li>Initiative: <%= school.initiative %></li>
+      <li>Cohort(?): <%= school.cohort %></li>
+      <li>Principal: <%= school.principal %></li>
+      <li>Email: <%= school.email %></li>
+      <li>Phone: <%= school.phone %></li>
+      <li>Address: <%= school.address %></li>
+      <li>Coach: <%= school.coach %></li>
+    </ul>
+  <% end %>
